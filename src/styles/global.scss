@@ -1,0 +1,60 @@
+// Global Styles
+@import './design-system/index.scss';
+
+// Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography Classes
+.h1 { @include heading-1; }
+.h2 { @include heading-2; }
+.h3 { @include heading-3; }
+.h4 { @include heading-4; }
+.body-large { @include body-large; }
+.body-base { @include body-base; }
+.body-small { @include body-small; }
+.caption { @include caption; }
+.code { @include code; }
+
+// Layout Classes
+.container {
+  @include container;
+}
+
+// Utility Classes
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

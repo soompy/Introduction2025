@@ -1,0 +1,88 @@
+// Breakpoints Design System
+:root {
+  // Breakpoint Values
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  // Container Max Widths
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
+
+// Media Query Mixins
+@mixin mobile-only {
+  @media (max-width: #{var(--breakpoint-sm) - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: var(--breakpoint-sm)) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: var(--breakpoint-sm)) and (max-width: #{var(--breakpoint-lg) - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: var(--breakpoint-lg)) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: var(--breakpoint-lg)) and (max-width: #{var(--breakpoint-xl) - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: var(--breakpoint-xl)) {
+    @content;
+  }
+}
+
+@mixin ultra-wide-up {
+  @media (min-width: var(--breakpoint-2xl)) {
+    @content;
+  }
+}
+
+// Container Mixin
+@mixin container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--layout-container-x);
+  padding-right: var(--layout-container-x);
+
+  @include tablet-up {
+    max-width: var(--container-sm);
+  }
+
+  @media (min-width: var(--breakpoint-md)) {
+    max-width: var(--container-md);
+  }
+
+  @include desktop-up {
+    max-width: var(--container-lg);
+  }
+
+  @include large-desktop-up {
+    max-width: var(--container-xl);
+  }
+
+  @include ultra-wide-up {
+    max-width: var(--container-2xl);
+  }
+}
