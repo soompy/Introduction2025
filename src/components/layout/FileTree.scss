@@ -1,0 +1,219 @@
+// =============================================================================
+// FILE TREE COMPONENT STYLES
+// =============================================================================
+
+.file-tree {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text-sm);
+}
+
+.file-tree-header {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-secondary);
+    background-color: var(--bg-overlay);
+    
+    h3 {
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+}
+
+.file-tree-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-2) 0;
+}
+
+.file-tree-item {
+    user-select: none;
+}
+
+.file-tree-node {
+    display: flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    color: var(--text-tertiary);
+    transition: all 0.2s ease;
+    border-radius: var(--radius-sm);
+    margin: 0 var(--space-1);
+    position: relative;
+    
+    &:hover {
+        background-color: var(--interactive-hover);
+        color: var(--text-primary);
+    }
+    
+    &.selected {
+        background-color: var(--text-accent);
+        color: var(--bg-primary);
+        
+        &:hover {
+            background-color: var(--text-accent);
+        }
+    }
+    
+    &.project-folder {
+        border-left: 3px solid var(--text-accent);
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+        
+        .file-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        &:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, var(--interactive-hover) 100%);
+        }
+    }
+    
+    .project-actions {
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        margin-left: auto;
+    }
+    
+    &:hover .project-actions {
+        opacity: 1;
+    }
+}
+
+.file-icon {
+    display: flex;
+    align-items: center;
+    margin-right: var(--space-2);
+    font-size: 14px;
+    position: relative;
+}
+
+.folder-toggle {
+    position: absolute;
+    left: -12px;
+    font-size: 10px;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+    
+    &.expanded {
+        transform: rotate(90deg);
+    }
+}
+
+.file-name {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.preview-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+    
+    &:hover {
+        background: var(--text-accent);
+        transform: scale(1.1);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.file-tree-children {
+    // 자식 요소들을 위한 스타일
+}
+
+// 파일 타입별 특별한 스타일
+.file-tree-node {
+    // HTML 파일
+    &[data-extension="html"] .file-name {
+        color: #e34c26;
+    }
+    
+    // CSS 파일  
+    &[data-extension="css"],
+    &[data-extension="scss"] {
+        .file-name {
+            color: #1572b6;
+        }
+    }
+    
+    // JavaScript 파일
+    &[data-extension="js"] .file-name {
+        color: #f7df1e;
+    }
+    
+    // TypeScript 파일
+    &[data-extension="ts"],
+    &[data-extension="tsx"] {
+        .file-name {
+            color: #3178c6;
+        }
+    }
+    
+    // JSON 파일
+    &[data-extension="json"] .file-name {
+        color: #cbcb41;
+    }
+    
+    // 마크다운 파일
+    &[data-extension="md"] .file-name {
+        color: #083fa1;
+    }
+}
+
+// 스크롤바 스타일링
+.file-tree-content {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-secondary);
+        border-radius: 3px;
+        
+        &:hover {
+            background: var(--border-primary);
+        }
+    }
+}
+
+// 반응형 디자인
+@media (max-width: 768px) {
+    .file-tree-header {
+        padding: var(--space-2) var(--space-3);
+        
+        h3 {
+            font-size: var(--text-xs);
+        }
+    }
+    
+    .file-tree-node {
+        padding: var(--space-1);
+        margin: 0;
+    }
+    
+    .file-name {
+        font-size: var(--text-xs);
+    }
+}

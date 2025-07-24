@@ -1,0 +1,381 @@
+// =============================================================================
+// CODE EDITOR COMPONENT STYLES
+// =============================================================================
+
+.code-editor {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--code-bg);
+}
+
+// 탭 바
+.editor-tabs {
+    display: flex;
+    background-color: var(--bg-overlay);
+    border-bottom: 1px solid var(--border-primary);
+    overflow-x: auto;
+    min-height: 40px;
+    
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-secondary);
+        border-radius: 2px;
+    }
+}
+
+.editor-tab {
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--bg-elevated);
+    border-right: 1px solid var(--border-primary);
+    cursor: pointer;
+    min-width: 120px;
+    max-width: 200px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    
+    &:hover {
+        background-color: var(--interactive-hover);
+        color: var(--text-primary);
+        
+        .tab-close {
+            opacity: 1;
+        }
+    }
+    
+    &.active {
+        background-color: var(--code-bg);
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--text-accent);
+        
+        .tab-close {
+            opacity: 1;
+        }
+    }
+}
+
+.tab-icon {
+    margin-right: var(--space-1);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.tab-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: var(--space-1);
+}
+
+.tab-dirty {
+    color: var(--text-accent);
+    margin-right: var(--space-1);
+    font-size: 16px;
+    line-height: 1;
+}
+
+.tab-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 2px;
+    
+    &:hover {
+        color: var(--text-primary);
+        background-color: var(--interactive-hover);
+    }
+}
+
+// 에디터 컨텐츠
+.editor-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-secondary);
+    font-size: var(--text-sm);
+}
+
+.file-path {
+    color: var(--text-secondary);
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.file-info {
+    display: flex;
+    gap: var(--space-4);
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+}
+
+.language {
+    background-color: var(--text-accent);
+    color: var(--bg-primary);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.code-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.line-numbers {
+    background-color: var(--bg-surface);
+    color: var(--text-muted);
+    padding: var(--space-4) var(--space-2);
+    text-align: right;
+    min-width: 50px;
+    border-right: 1px solid var(--border-secondary);
+    user-select: none;
+    font-size: 12px;
+}
+
+.line-number {
+    height: 21px; // line-height * font-size
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.code-lines {
+    flex: 1;
+    overflow: auto;
+    padding: var(--space-4);
+    background-color: var(--code-bg);
+    
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: var(--bg-surface);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-secondary);
+        border-radius: 6px;
+        
+        &:hover {
+            background: var(--border-primary);
+        }
+    }
+    
+    &::-webkit-scrollbar-corner {
+        background: var(--bg-surface);
+    }
+}
+
+pre {
+    margin: 0;
+    color: var(--text-primary);
+    white-space: pre;
+    word-wrap: normal;
+    overflow-wrap: normal;
+}
+
+code {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+// 웰컴 스크린
+.welcome-screen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--code-bg);
+}
+
+.welcome-content {
+    text-align: center;
+    max-width: 500px;
+    padding: var(--space-8);
+    
+    h2 {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-4);
+        color: var(--text-primary);
+    }
+    
+    p {
+        font-size: var(--text-lg);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-8);
+        line-height: 1.6;
+    }
+}
+
+.welcome-shortcuts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    
+    kbd {
+        background-color: var(--bg-elevated);
+        border: 1px solid var(--border-secondary);
+        border-radius: 3px;
+        padding: 2px 6px;
+        font-size: var(--text-xs);
+        font-family: inherit;
+        color: var(--text-primary);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// 구문 하이라이팅 (기본)
+.language-html {
+    .hljs-tag {
+        color: #e34c26;
+    }
+    
+    .hljs-name {
+        color: #e34c26;
+    }
+    
+    .hljs-attr {
+        color: #92c5f8;
+    }
+    
+    .hljs-string {
+        color: #ce9178;
+    }
+}
+
+.language-css,
+.language-scss {
+    .hljs-selector-tag {
+        color: #d7ba7d;
+    }
+    
+    .hljs-selector-class {
+        color: #d7ba7d;
+    }
+    
+    .hljs-property {
+        color: #9cdcfe;
+    }
+    
+    .hljs-value {
+        color: #ce9178;
+    }
+}
+
+.language-javascript {
+    .hljs-keyword {
+        color: #569cd6;
+    }
+    
+    .hljs-string {
+        color: #ce9178;
+    }
+    
+    .hljs-function {
+        color: #dcdcaa;
+    }
+    
+    .hljs-comment {
+        color: #6a9955;
+        font-style: italic;
+    }
+}
+
+// 반응형 디자인
+@media (max-width: 768px) {
+    .editor-tab {
+        min-width: 100px;
+        max-width: 150px;
+        padding: var(--space-1) var(--space-2);
+    }
+    
+    .tab-name {
+        font-size: var(--text-xs);
+    }
+    
+    .code-header {
+        padding: var(--space-1) var(--space-2);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+    
+    .file-info {
+        gap: var(--space-2);
+    }
+    
+    .line-numbers {
+        min-width: 40px;
+        padding: var(--space-2) var(--space-1);
+    }
+    
+    .code-lines {
+        padding: var(--space-2);
+    }
+    
+    .welcome-content {
+        padding: var(--space-4);
+        
+        h2 {
+            font-size: var(--text-xl);
+        }
+        
+        p {
+            font-size: var(--text-base);
+        }
+    }
+    
+    .shortcut {
+        font-size: var(--text-xs);
+    }
+}
