@@ -1,0 +1,374 @@
+// =============================================================================
+// MAIN PAGE STYLES
+// =============================================================================
+
+// =============================================================================
+// LAYOUT COMPONENTS
+// =============================================================================
+
+// Main app container
+.portfolio-container {
+    height: 100vh;
+}
+
+.portfolio-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// Layout
+.portfolio-layout {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+// File Explorer (Sidebar)
+.file-explorer {
+    width: 220px;
+    padding: var(--space-4);
+    overflow-y: auto;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-secondary);
+}
+
+.file-tree {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &--nested {
+        padding-left: var(--space-4);
+        margin-top: var(--space-2);
+    }
+}
+
+.file-item {
+    margin-bottom: var(--space-1);
+}
+
+.file-button {
+    background: none;
+    border: none;
+    font-size: var(--text-sm);
+    text-align: left;
+    padding: var(--space-1) 0;
+    cursor: pointer;
+    width: 100%;
+    color: var(--text-tertiary);
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+
+    &:focus {
+        outline: 1px solid var(--interactive-focus);
+        outline-offset: 2px;
+    }
+}
+
+.folder-button {
+    font-weight: 500;
+    color: var(--text-accent);
+
+    &:hover {
+        color: var(--text-highlight);
+    }
+}
+
+// Code Editor
+.code-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--code-bg);
+}
+
+.editor-tabs {
+    padding: var(--space-2);
+    display: flex;
+    gap: var(--space-2);
+    background-color: var(--bg-overlay);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.editor-tab {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    border-bottom: none;
+    padding: var(--space-2) var(--space-4);
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: var(--interactive-hover);
+        color: var(--text-primary);
+    }
+
+    &--active {
+        background: var(--code-bg);
+        color: var(--text-primary);
+        font-weight: 500;
+        border-color: var(--border-accent);
+    }
+
+    &:focus {
+        outline: 2px solid var(--interactive-focus);
+        outline-offset: -2px;
+    }
+}
+
+.editor-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    padding: var(--space-8);
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+// =============================================================================
+// CONTENT TYPOGRAPHY
+// =============================================================================
+
+.greeting {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.intro-text {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.section-title {
+    font-size: var(--text-xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    font-weight: 600;
+    color: var(--text-accent);
+    border-bottom: 2px solid var(--border-accent);
+    padding-bottom: var(--space-2);
+    display: inline-block;
+}
+
+// =============================================================================
+// SKILLS SECTION
+// =============================================================================
+
+.skills-section {
+    margin-bottom: var(--space-12);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-item {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: 1px solid var(--border-secondary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+        transform: translateY(-2px);
+        background: var(--interactive-hover);
+        box-shadow: var(--shadow-md);
+        border-color: var(--border-accent);
+    }
+}
+
+// =============================================================================
+// PROJECTS SECTION
+// =============================================================================
+
+.projects-section {
+    margin-bottom: var(--space-8);
+}
+
+.project-card {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+        border-color: var(--border-accent);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-1px);
+    }
+}
+
+.project-title {
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+    font-weight: 600;
+    color: var(--text-highlight);
+}
+
+.project-description {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-feature {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    padding-left: var(--space-5);
+
+    &::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--text-accent);
+        font-weight: bold;
+    }
+}
+
+// =============================================================================
+// TERMINAL SECTION
+// =============================================================================
+
+.portfolio-terminal {
+    background-color: var(--bg-tertiary);
+    border-top: 1px solid var(--border-secondary);
+    padding: 0;
+}
+
+.terminal-header {
+    background-color: var(--bg-overlay);
+    border-bottom: 1px solid var(--border-primary);
+    padding: var(--space-2) var(--space-4);
+}
+
+.terminal-label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.terminal-body {
+    padding: var(--space-2) var(--space-4);
+}
+
+.terminal-input {
+    width: 100%;
+    background: var(--terminal-bg);
+    color: var(--terminal-text);
+    border: 1px solid var(--border-secondary);
+    padding: var(--space-3);
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: var(--text-sm);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+        color: var(--text-muted);
+    }
+
+    &:focus {
+        border-color: var(--border-accent);
+        box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+    }
+}
+
+// =============================================================================
+// RESPONSIVE DESIGN
+// =============================================================================
+
+@media (max-width: 768px) {
+    .portfolio-layout {
+        flex-direction: column;
+    }
+
+    .file-explorer {
+        width: 100%;
+        max-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-secondary);
+    }
+
+    .content-wrapper {
+        padding: var(--space-4);
+    }
+
+    .greeting {
+        font-size: var(--text-3xl);
+    }
+
+    .skills-list {
+        gap: var(--space-2);
+    }
+
+    .skill-item {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    .project-card {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .file-explorer {
+        padding: var(--space-2);
+    }
+
+    .content-wrapper {
+        padding: var(--space-3);
+    }
+
+    .greeting {
+        font-size: var(--text-2xl);
+    }
+
+    .section-title {
+        font-size: var(--text-lg);
+        margin-top: var(--space-8);
+    }
+
+    .skills-list {
+        gap: var(--space-1);
+    }
+
+    .project-card {
+        padding: var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+}

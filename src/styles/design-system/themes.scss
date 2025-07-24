@@ -1,0 +1,87 @@
+// =============================================================================
+// SEMANTIC COLOR TOKENS - THEME SYSTEM
+// =============================================================================
+
+// Dark Theme Tokens
+.dark-theme {
+    // Background Colors
+    --bg-primary: var(--color-neutral-900);
+    --bg-secondary: var(--color-neutral-800);
+    --bg-tertiary: var(--color-neutral-950);
+    --bg-elevated: #2a2a2a;
+    --bg-surface: #252526;
+    --bg-overlay: #2d2d2d;
+
+    // Text Colors
+    --text-primary: var(--color-neutral-0);
+    --text-secondary: #cccccc;
+    --text-tertiary: #c5c5c5;
+    --text-muted: #808080;
+    --text-accent: var(--color-accent-cyan-400);
+    --text-brand: var(--color-primary-500);
+    --text-highlight: var(--color-accent-purple-400);
+
+    // Border Colors
+    --border-primary: #444444;
+    --border-secondary: var(--color-neutral-700);
+    --border-accent: var(--color-accent-cyan-400);
+    --border-brand: var(--color-primary-500);
+
+    // Interactive Colors
+    --interactive-hover: #404040;
+    --interactive-active: #505050;
+    --interactive-focus: var(--color-primary-500);
+
+    // Status Colors
+    --status-success: var(--color-accent-green-500);
+    --status-warning: #ffc107;
+    --status-error: #dc3545;
+    --status-info: var(--color-primary-500);
+
+    // Special Colors
+    --terminal-bg: #000000;
+    --terminal-text: var(--color-accent-green-400);
+    --code-bg: var(--color-neutral-900);
+}
+
+// Light Theme Tokens
+.light-theme {
+    // Background Colors
+    --bg-primary: var(--color-neutral-0);
+    --bg-secondary: var(--color-neutral-50);
+    --bg-tertiary: var(--color-neutral-100);
+    --bg-elevated: #f9f9f9;
+    --bg-surface: var(--color-neutral-100);
+    --bg-overlay: var(--color-neutral-200);
+
+    // Text Colors
+    --text-primary: var(--color-neutral-800);
+    --text-secondary: var(--color-neutral-600);
+    --text-tertiary: var(--color-neutral-500);
+    --text-muted: var(--color-neutral-400);
+    --text-accent: var(--color-primary-600);
+    --text-brand: var(--color-primary-500);
+    --text-highlight: #0066cc;
+
+    // Border Colors
+    --border-primary: var(--color-neutral-300);
+    --border-secondary: var(--color-neutral-200);
+    --border-accent: var(--color-primary-500);
+    --border-brand: var(--color-primary-500);
+
+    // Interactive Colors
+    --interactive-hover: var(--color-neutral-100);
+    --interactive-active: var(--color-neutral-200);
+    --interactive-focus: var(--color-primary-500);
+
+    // Status Colors
+    --status-success: #28a745;
+    --status-warning: #ffc107;
+    --status-error: #dc3545;
+    --status-info: var(--color-primary-500);
+
+    // Special Colors
+    --terminal-bg: var(--color-neutral-0);
+    --terminal-text: var(--color-neutral-800);
+    --code-bg: var(--color-neutral-0);
+}
