@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import type { TabInfo } from '../../types/fileSystem';
-import './CodeEditor.scss';
+import React, { useState } from "react";
+import type { TabInfo } from "../../types/fileSystem";
+import LivePreview from "../LivePreview";
+import "./CodeEditor.scss";
 
 interface CodeEditorProps {
     tabs: TabInfo[];
@@ -13,56 +14,78 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
     tabs,
     activeTab,
     onTabSelect,
-    onTabClose
+    onTabClose,
 }) => {
-    const currentTab = tabs.find(tab => tab.id === activeTab);
-    
+    const [showPreview, setShowPreview] = useState(true);
+    const currentTab = tabs.find((tab) => tab.id === activeTab);
+
     const getLanguageFromExtension = (path: string) => {
-        const extension = path.split('.').pop();
+        const extension = path.split(".").pop();
         switch (extension) {
-            case 'html': return 'html';
-            case 'css': return 'css';
-            case 'scss': return 'scss';
-            case 'js': return 'javascript';
-            case 'ts': return 'typescript';
-            case 'tsx': return 'tsx';
-            case 'json': return 'json';
-            case 'md': return 'markdown';
-            default: return 'text';
+            case "html":
+                return "html";
+            case "css":
+                return "css";
+            case "scss":
+                return "scss";
+            case "js":
+                return "javascript";
+            case "ts":
+                return "typescript";
+            case "tsx":
+                return "tsx";
+            case "json":
+                return "json";
+            case "md":
+                return "markdown";
+            default:
+                return "text";
         }
     };
-    
+
     const formatCode = (code: string, language: string) => {
         // 간단한 구문 하이라이팅 (실제로는 더 복잡한 라이브러리 사용)
         return code;
     };
-    
+
     const getFileIcon = (path: string) => {
-        const extension = path.split('.').pop();
+        const extension = path.split(".").pop();
         switch (extension) {
-            case 'html': return '🌐';
-            case 'css': return '🎨';
-            case 'scss': return '🎨';
-            case 'js': return '⚡';
-            case 'ts': return '🔷';
-            case 'tsx': return '⚛️';
-            case 'json': return '📋';
-            case 'md': return '📝';
-            case 'pdf': return '📄';
-            default: return '📄';
+            case "html":
+                return "🌐";
+            case "css":
+                return "🎨";
+            case "scss":
+                return "🎨";
+            case "js":
+                return "⚡";
+            case "ts":
+                return "🔷";
+            case "tsx":
+                return "⚛️";
+            case "json":
+                return "📋";
+            case "md":
+                return "📝";
+            case "pdf":
+                return "📄";
+            default:
+                return "📄";
         }
     };
-    
+
     return (
         <div className="code-editor">
             <div className="editor-tabs">
-                {tabs.map(tab => (
+                {tabs.map((tab) => (
                     <div
                         key={tab.id}
-                        className={`editor-tab ${tab.isActive ? 'active' : ''}`}
+                        className={`editor-tab ${tab.isActive ? "active" : ""}`}
                         onClick={() => onTabSelect(tab.id)}
                     >
-                        <span className="tab-icon">{getFileIcon(tab.path)}</span>
+                        <span className="tab-icon">
+                            {getFileIcon(tab.path)}
+                        </span>
                         <span className="tab-name">{tab.name}</span>
                         {tab.isDirty && <span className="tab-dirty">●</span>}
                         <button
@@ -77,36 +100,77 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
                         </button>
                     </div>
                 ))}
+                {currentTab && (
+                    <div className="editor-controls">
+                        <button
+                            className={`preview-toggle ${
+                                showPreview ? "active" : ""
+                            }`}
+                            onClick={() => setShowPreview(!showPreview)}
+                            title="라이브 미리보기 토글"
+                        >
+                            {showPreview ? "📝" : "👁️"}
+                        </button>
+                    </div>
+                )}
             </div>
-            
+
             <div className="editor-content">
                 {currentTab ? (
-                    <div className="code-container">
-                        <div className="code-header">
-                            <div className="file-path">{currentTab.path}</div>
-                            <div className="file-info">
-                                <span className="language">
-                                    {getLanguageFromExtension(currentTab.path)}
-                                </span>
-                                <span className="file-size">
-                                    {currentTab.content.length} characters
-                                </span>
-                            </div>
-                        </div>
-                        <div className="code-body">
-                            <div className="line-numbers">
-                                {currentTab.content.split('\n').map((_, index) => (
-                                    <div key={index} className="line-number">
-                                        {index + 1}
+                    <div
+                        className={`code-editor-layout ${
+                            showPreview ? "split-view" : "code-only"
+                        }`}
+                    >
+                        <div className="code-panel">
+                            <div className="code-container">
+                                <div className="code-header">
+                                    <div className="file-path">
+                                        {currentTab.path}
                                     </div>
-                                ))}
-                            </div>
-                            <div className="code-lines">
-                                <pre className={`language-${getLanguageFromExtension(currentTab.path)}`}>
-                                    <code>{currentTab.content}</code>
-                                </pre>
+                                    <div className="file-info">
+                                        <span className="language">
+                                            {getLanguageFromExtension(
+                                                currentTab.path
+                                            )}
+                                        </span>
+                                        <span className="file-size">
+                                            {currentTab.content.length}{" "}
+                                            characters
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="code-body">
+                                    <div className="line-numbers">
+                                        {currentTab.content
+                                            .split("\n")
+                                            .map((_, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="line-number"
+                                                >
+                                                    {index + 1}
+                                                </div>
+                                            ))}
+                                    </div>
+                                    <div className="code-lines">
+                                        <pre
+                                            className={`language-${getLanguageFromExtension(
+                                                currentTab.path
+                                            )}`}
+                                        >
+                                            <code>{currentTab.content}</code>
+                                        </pre>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        {showPreview && (
+                            <div className="preview-panel">
+                                <LivePreview currentTab={currentTab} />
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <div className="welcome-screen">
@@ -115,13 +179,15 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
                             <p>파일을 선택하여 코드를 확인해보세요!</p>
                             <div className="welcome-shortcuts">
                                 <div className="shortcut">
-                                    <kbd>Ctrl</kbd> + <kbd>P</kbd> - 파일 빠른 열기
+                                    <kbd>Ctrl</kbd> + <kbd>P</kbd> - 파일 빠른
+                                    열기
                                 </div>
                                 <div className="shortcut">
                                     <kbd>Ctrl</kbd> + <kbd>`</kbd> - 터미널 토글
                                 </div>
                                 <div className="shortcut">
-                                    <kbd>Ctrl</kbd> + <kbd>B</kbd> - 사이드바 토글
+                                    <kbd>Ctrl</kbd> + <kbd>B</kbd> - 사이드바
+                                    토글
                                 </div>
                             </div>
                         </div>

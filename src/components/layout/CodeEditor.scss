@@ -12,22 +12,57 @@
 // 탭 바
 .editor-tabs {
     display: flex;
+    align-items: center;
     background-color: var(--bg-overlay);
     border-bottom: 1px solid var(--border-primary);
     overflow-x: auto;
     min-height: 40px;
-    
+
     &::-webkit-scrollbar {
         height: 3px;
     }
-    
+
     &::-webkit-scrollbar-track {
         background: transparent;
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background: var(--border-secondary);
         border-radius: 2px;
+    }
+}
+
+// Editor controls
+.editor-controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0 var(--space-2);
+}
+
+.preview-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+
+    &:hover {
+        background: var(--bg-hover);
+        border-color: var(--border-primary);
+    }
+
+    &.active {
+        background: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
     }
 }
 
@@ -45,21 +80,21 @@
     font-size: var(--text-sm);
     transition: all 0.2s ease;
     white-space: nowrap;
-    
+
     &:hover {
         background-color: var(--interactive-hover);
         color: var(--text-primary);
-        
+
         .tab-close {
             opacity: 1;
         }
     }
-    
+
     &.active {
         background-color: var(--code-bg);
         color: var(--text-primary);
         border-bottom: 2px solid var(--text-accent);
-        
+
         .tab-close {
             opacity: 1;
         }
@@ -97,7 +132,7 @@
     opacity: 0;
     transition: opacity 0.2s ease;
     border-radius: 2px;
-    
+
     &:hover {
         color: var(--text-primary);
         background-color: var(--interactive-hover);
@@ -181,25 +216,25 @@
     overflow: auto;
     padding: var(--space-4);
     background-color: var(--code-bg);
-    
+
     &::-webkit-scrollbar {
         width: 12px;
         height: 12px;
     }
-    
+
     &::-webkit-scrollbar-track {
         background: var(--bg-surface);
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background: var(--border-secondary);
         border-radius: 6px;
-        
+
         &:hover {
             background: var(--border-primary);
         }
     }
-    
+
     &::-webkit-scrollbar-corner {
         background: var(--bg-surface);
     }
@@ -233,13 +268,13 @@ code {
     text-align: center;
     max-width: 500px;
     padding: var(--space-8);
-    
+
     h2 {
         font-size: var(--text-2xl);
         margin-bottom: var(--space-4);
         color: var(--text-primary);
     }
-    
+
     p {
         font-size: var(--text-lg);
         color: var(--text-secondary);
@@ -261,7 +296,7 @@ code {
     align-items: center;
     justify-content: center;
     gap: var(--space-1);
-    
+
     kbd {
         background-color: var(--bg-elevated);
         border: 1px solid var(--border-secondary);
@@ -279,15 +314,15 @@ code {
     .hljs-tag {
         color: #e34c26;
     }
-    
+
     .hljs-name {
         color: #e34c26;
     }
-    
+
     .hljs-attr {
         color: #92c5f8;
     }
-    
+
     .hljs-string {
         color: #ce9178;
     }
@@ -298,15 +333,15 @@ code {
     .hljs-selector-tag {
         color: #d7ba7d;
     }
-    
+
     .hljs-selector-class {
         color: #d7ba7d;
     }
-    
+
     .hljs-property {
         color: #9cdcfe;
     }
-    
+
     .hljs-value {
         color: #ce9178;
     }
@@ -316,15 +351,15 @@ code {
     .hljs-keyword {
         color: #569cd6;
     }
-    
+
     .hljs-string {
         color: #ce9178;
     }
-    
+
     .hljs-function {
         color: #dcdcaa;
     }
-    
+
     .hljs-comment {
         color: #6a9955;
         font-style: italic;
@@ -338,44 +373,236 @@ code {
         max-width: 150px;
         padding: var(--space-1) var(--space-2);
     }
-    
+
     .tab-name {
         font-size: var(--text-xs);
     }
-    
+
     .code-header {
         padding: var(--space-1) var(--space-2);
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-1);
     }
-    
+
     .file-info {
         gap: var(--space-2);
     }
-    
+
     .line-numbers {
         min-width: 40px;
         padding: var(--space-2) var(--space-1);
     }
-    
+
     .code-lines {
         padding: var(--space-2);
     }
-    
+
     .welcome-content {
         padding: var(--space-4);
-        
+
         h2 {
             font-size: var(--text-xl);
         }
-        
+
         p {
             font-size: var(--text-base);
         }
     }
-    
+
     .shortcut {
         font-size: var(--text-xs);
     }
+}
+
+// Live Preview Styles
+.code-editor-layout {
+    display: flex;
+    height: 100%;
+
+    &.code-only {
+        .code-panel {
+            width: 100%;
+        }
+    }
+
+    &.split-view {
+        .code-panel {
+            width: 50%;
+            border-right: 1px solid var(--border-secondary);
+        }
+
+        .preview-panel {
+            width: 50%;
+        }
+    }
+}
+
+.code-panel,
+.preview-panel {
+    height: 100%;
+    overflow: hidden;
+}
+
+.live-preview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-secondary);
+    font-size: var(--text-sm);
+}
+
+.preview-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.preview-icon {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.preview-file {
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+}
+
+.preview-content {
+    flex: 1;
+    overflow: auto;
+    background: white;
+}
+
+.preview-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+.css-preview,
+.markdown-preview,
+.default-preview {
+    padding: var(--space-4);
+    height: 100%;
+    overflow: auto;
+}
+
+.preview-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: var(--bg-surface);
+}
+
+.empty-content {
+    text-align: center;
+    max-width: 400px;
+    padding: var(--space-6);
+}
+
+.empty-content h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+    color: var(--text-secondary);
+}
+
+.empty-content p {
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.supported-formats {
+    text-align: left;
+    background: var(--bg-tertiary);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+}
+
+.supported-formats h4 {
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.supported-formats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.supported-formats li {
+    padding: var(--space-1) 0;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.file-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+    padding: var(--space-3);
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--text-primary);
+    font-family: 'Fira Code', monospace;
+}
+
+.content-preview {
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--accent-primary);
+}
+
+.content-preview h4 {
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+}
+
+.content-preview p {
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+    font-size: var(--text-sm);
+    line-height: 1.5;
 }

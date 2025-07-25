@@ -219,18 +219,6 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({ project, isOpen, onClos
                                     </div>
                                 </div>
                                 
-                                <div className="code-features">
-                                    <h4>🔧 주요 구현 사항</h4>
-                                    <ul className="feature-list">
-                                        <li>📱 반응형 웹 디자인 구현</li>
-                                        <li>♿ 웹 접근성 가이드라인 준수</li>
-                                        <li>⚡ 성능 최적화 및 번들 사이즈 최소화</li>
-                                        <li>🌐 크로스 브라우저 호환성</li>
-                                        <li>🎨 컴포넌트 기반 아키텍처</li>
-                                        <li>📊 SEO 최적화</li>
-                                    </ul>
-                                </div>
-                                
                                 {project.github && (
                                     <div className="repo-actions">
                                         <a 

@@ -2,28 +2,28 @@
 // 웹 퍼블리셔 포트폴리오 파일 시스템 데이터
 // =============================================================================
 
-import type { FileNode, ProjectInfo } from '../types/fileSystem';
+import type { FileNode, ProjectInfo } from "../types/fileSystem";
 
 export const fileSystemData: FileNode = {
-    id: 'root',
-    name: 'portfolio-workspace',
-    type: 'folder',
+    id: "root",
+    name: "portfolio-workspace",
+    type: "folder",
     isExpanded: true,
-    path: '/',
+    path: "/",
     children: [
         {
-            id: 'about',
-            name: 'about',
-            type: 'folder',
+            id: "about",
+            name: "소개",
+            type: "folder",
             isExpanded: false,
-            path: '/about',
+            path: "/about",
             children: [
                 {
-                    id: 'profile-html',
-                    name: 'profile.html',
-                    type: 'file',
-                    extension: 'html',
-                    path: '/about/profile.html',
+                    id: "profile-html",
+                    name: "profile.html",
+                    type: "file",
+                    extension: "html",
+                    path: "/about/profile.html",
                     content: `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,18 +37,18 @@ export const fileSystemData: FileNode = {
         <div class="profile-header">
             <h1 class="name">이수민</h1>
             <h2 class="title">웹 퍼블리셔 & 프론트엔드 개발자</h2>
-            <p class="experience">총 5년 7개월 실무 경험</p>
+            <p class="experience">실무 경력 총 5년 7개월</p>
         </div>
         
         <div class="profile-content">
             <div class="intro-section">
                 <h3>소개</h3>
                 <p class="slogan">
-                    "다양한 프로젝트 경험과 기술 역량으로 짜임새 있는 UI개발자가 되겠습니다."
+                    "퍼포먼스와 사용자 경험을 만드는 6년 차 UI 개발자입니다."
                 </p>
                 <p class="description">
-                    사용자 경험을 최우선으로 생각하며, 시맨틱하고 유지보수 편리한 마크업을 작성합니다.
-                    인터랙티브한 웹 효과 구현과 컴포넌트 기반 UI 개발에 전문성을 가지고 있습니다.
+                    사용자 경험을 최우선으로 생각하며 시맨틱하고 유지보수 편리한 마크업을 작성합니다.
+                    인터랙티브한 웹 효과 구현과 컴포넌트 기반 UI 개발 특장점을 가지고 있습니다.
                 </p>
             </div>
             
@@ -57,23 +57,23 @@ export const fileSystemData: FileNode = {
                 <ul class="competency-list">
                     <li>
                         <strong>시맨틱 마크업</strong>
-                        <span>웹 표준과 접근성을 고려한 구조적 HTML 작성</span>
+                        <span>웹 표준과 접근성을 고려한 구조적 마크업을 작성합니다.</span>
                     </li>
                     <li>
                         <strong>인터랙티브 웹 구현</strong>
-                        <span>사용자 경험을 향상시키는 동적 효과 개발</span>
+                        <span>GSAP과 Framer Motion을 활용하여 사용자 경험을 향상시키는 동적 효과 개발이 가능합니다.</span>
                     </li>
                     <li>
                         <strong>컴포넌트 기반 개발</strong>
-                        <span>재사용 가능하고 확장성 있는 UI 컴포넌트 설계</span>
+                        <span>재사용 가능하고 확장성 있는 UI 컴포넌트 설계가 가능합니다.</span>
                     </li>
                     <li>
                         <strong>반응형 웹 제작</strong>
-                        <span>다양한 디바이스에 최적화된 사용자 인터페이스</span>
+                        <span>다양한 디바이스에 최적화된 사용자 인터페이스를 구현합니다.</span>
                     </li>
                     <li>
                         <strong>크로스 브라우저 호환성</strong>
-                        <span>모든 주요 브라우저에서 일관된 사용자 경험 제공</span>
+                        <span>모든 주요 브라우저에서 일관된 사용자 경험을 제공합니다.</span>
                     </li>
                 </ul>
             </div>
@@ -82,7 +82,7 @@ export const fileSystemData: FileNode = {
                 <h3>업무 철학</h3>
                 <blockquote>
                     <p>
-                        단순히 보기 좋은 웹페이지가 아닌, 사용자가 직관적으로 이해하고 
+                        단순히 보기 좋은 웹페이지가 아닌 사용자가 직관적으로 이해하고 
                         편리하게 사용할 수 있는 인터페이스를 만들고 싶습니다.
                     </p>
                     <p>
@@ -93,14 +93,14 @@ export const fileSystemData: FileNode = {
         </div>
     </section>
 </body>
-</html>`
+</html>`,
                 },
                 {
-                    id: 'career-html',
-                    name: 'career.html',
-                    type: 'file',
-                    extension: 'html',
-                    path: '/about/career.html',
+                    id: "career-html",
+                    name: "career.html",
+                    type: "file",
+                    extension: "html",
+                    path: "/about/career.html",
                     content: `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -117,89 +117,382 @@ export const fileSystemData: FileNode = {
         </header>
         
         <div class="career-content">
-            <div class="experience-section">
-                <h2>주요 경력</h2>
+            <div class="timeline-section">
+                <h2>경력 타임라인</h2>
                 
-                <div class="job-list">
-                    <article class="job-item">
-                        <div class="job-header">
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2025.03.24~2025.06.17</div>
                             <h3 class="company-name">빗썸</h3>
-                            <span class="job-period">2023.01 - 2024.01 (1년)</span>
+                            <p class="job-title">웹 퍼블리셔 / 프론트엔드 개발자</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>빗썸 시장동향 페이지 성능개선
+</h5>
+                                    <p>2025.04.07~2025.06.13</p>
+                                    <ul class="task-list">
+                                        <li>React 기반 페이지의 초기 렌더링 성능을 최적화하여 Lighthouse 기준 LCP 성능을 최대 50% 향상</li>
+                                        <li>불필요한 렌더링 제거 및 코드 분할 전략 적용을 통해 사용자 체감 속도 개선</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>법인서류접수, 법인계좌연결</h5>
+                                    <p>2025.04.07~2025.05.15</p>
+                                    <ul class="task-list">
+                                        <li>React 기반으로 전반적인 화면 퍼블리싱 및 컴포넌트 구현 담당</li>
+                                        <li>다양한 법인 유형(일반 법인, 비영리 법인 등)에 따라 요구되는 제출 서류를 명확히 안내하기 위한 구조화된 정보 테이블 설계</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>빗썸</h5>
+                                    <p>2025.03.24~2025.06.13</p>
+                                    <ul class="task-list">
+                                        <li>빗썸 PC/Mobile 적응형 웹 페이지 운영(React 환경)</li>
+                                        <li>React 기반 서비스의 UI 일관성을 유지하며 지속적인 유지보수 및 개선 업무 수행</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">SCSS</span>
+                                <span class="tech-tag">Storybook</span>
+                                <span class="tech-tag">Webpack</span>
+                            </div>
                         </div>
-                        <p class="job-title">웹 퍼블리셔 / 프론트엔드 개발자</p>
-                        <ul class="job-responsibilities">
-                            <li>암호화폐 거래소 웹사이트 퍼블리싱</li>
-                            <li>React 기반 컴포넌트 개발 및 유지보수</li>
-                            <li>반응형 웹 구현 및 크로스 브라우저 최적화</li>
-                            <li>웹 접근성 준수 및 성능 최적화</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">SCSS</span>
-                        </div>
-                    </article>
+                    </div>
                     
-                    <article class="job-item">
-                        <div class="job-header">
-                            <h3 class="company-name">이투스에듀</h3>
-                            <span class="job-period">2022.03 - 2022.12 (10개월)</span>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
                         </div>
-                        <p class="job-title">웹 퍼블리셔</p>
-                        <ul class="job-responsibilities">
-                            <li>교육 플랫폼 웹사이트 퍼블리싱</li>
-                            <li>모바일 앱 웹뷰 인터페이스 개발</li>
-                            <li>Vue.js 기반 컴포넌트 제작</li>
-                            <li>Figma 디자인 시안 기반 픽셀 퍼펙트 구현</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Nuxt.js</span>
-                            <span class="tech-tag">SCSS</span>
-                            <span class="tech-tag">JavaScript</span>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2024.10.28~2025.01.27</div>
+                            <h3 class="company-name">이투스에듀(프리랜서)</h3>
+                            <p class="job-title">웹 퍼블리셔</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>LMS 개편</h5>
+                                    <p>2024.11.21~2024.11.25</p>
+                                    <ul class="task-list">
+                                        <li>지점별 고객 문의 응대 효율성을 높이기 위해 LMS 내 질의응답 페이지의 UI/UX 구조 전면 개선</li>
+                                        <li>반복되는 인터페이스 요소를 공통 컴포넌트로 분리하여 유지보수성과 재사용성 향상</li>
+                                    </ul>
+                                </div>
+
+                                <div class="work-item">
+                                    <h5>청솔학원</h5>
+                                    <p>2024.10.24~2025.01.27</p>
+                                    <ul class="task-list">
+                                        <li>O2O서비스 운영 및 Nuxt 환경에서 GSAP을 활용한 인터렉티브 프로모션 페이지 제작(Nuxt 환경)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Nuxt.js</span>
+                                <span class="tech-tag">SCSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Figma</span>
+                            </div>
                         </div>
-                    </article>
+                    </div>
                     
-                    <article class="job-item">
-                        <div class="job-header">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2021.01 - 2022.02</div>
                             <h3 class="company-name">카카오VX</h3>
-                            <span class="job-period">2021.01 - 2022.02 (1년 2개월)</span>
+                            <p class="job-title">웹 퍼블리셔</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>사내 복지 서비스 Hello 사이트 개편</h5>
+                                    <p>2023.04.03~2023.05.08</p>
+                                    <ul class="task-list">
+                                        <li>기존 Google Form 기반의 예약 프로세스를 대체하여, 달력 UI 기반의 직관적인 예약 페이지로 개편</li>
+                                        <li>공지사항 및 문의사항 게시판에 탭/아코디언 UI를 적용하여 정보 접근성과 사용 편의성 개선</li>
+                                        <li>웹 표준 및 웹 접근성 가이드라인을 준수하며, 다양한 디바이스와 브라우저에서 정상 작동하는 크로스 브라우징 대응 작업 수행</li>
+                                        <li>Git을 활용해 신규 프로젝트를 초기 세팅하고 협업 워크플로우를 정립하여, 팀 내 효율적인 작업 분담 및 코드 관리 체계화</li>
+                                        <li>Gulp를 통한 번들링/빌드 환경 구성 및 M1 Mac 환경에서 발생한 빌드 오류를 주도적으로 해결</li>
+                                        <li>해당 문제 해결 과정을 구글링 및 커뮤니티 자료 분석을 통해 직접 해결책을 도출</li>
+                                        <li>팀원들과 공유할 수 있도록 회고록 작성 및 지식 전파 진행</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>프렌즈스크린 앱 내 웹뷰 이벤트 페이지 작업</h5>
+                                    <p>2023.02.01~2023.09.29</p>
+                                    <ul class="task-list">
+                                        <li>프렌즈스크린 앱 내 이벤트 페이지 반응형 및 시각 효과 구현</li>
+                                        <li>갤럭시 폴드 등 와이드 디바이스 대응을 위해 px 단위를 vw로 전환하고, SCSS 기반으로 반응형 웹뷰 콘텐츠 구현</li>
+                                        <li>SCSS와 JavaScript를 활용하여 계절/이벤트별로 꽃잎 낙하, 나뭇잎 흔들림 등의 애니메이션 효과를 적용해 사용자 흥미 유도</li>
+                                        <li>디자인 요구에 맞는 애니메이션 연출을 위해 CodePen 등 플랫폼을 참고하고, 유사 사례 분석을 통해 구현 난이도 및 퍼포먼스 최적화 문제 해결</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>카카오골프예약 웹뷰 UI 및 서비스 페이지 작업</h5>
+                                    <p>2021.11.01~2023.09.29</p>
+                                    <ul class="task-list">
+                                        <li>카오골프예약 웹뷰 서비스 내 동적 이벤트 구현 및 이슈 관리</li>
+                                        <li>해외투어, 멤버십, 선결제, 예약매니저, 셀프 체크인, 이벤트 등 웹뷰 기반 서비스에서 마크업 및 JavaScript를 활용해 UI 인터랙션 구현</li>
+                                        <li>클릭 시 스크롤 이동, 아코디언 헤드 클릭 시 바디 오픈 등 사용자 편의성을 높이는 동적 이벤트 개발</li>
+                                        <li>Jira의 이슈 티켓, 타임라인, 에픽 기능을 활용해 서비스별 업무 흐름을 구조화하고, 팀 간 커뮤니케이션 및 이슈 관리를 원활히 조율</li>
+                                    </ul>
+                                </div>
+
+                                 <div class="work-item">
+                                    <h5>관제 어드민/모니터링 업데이트</h5>
+                                    <p>2021.11.01~2023.02.14</p>
+                                    <ul class="task-list">
+                                        <li>관제 어드민 UI 컴포넌트화 및 대형 화면 대응 반응형 설계</li>
+                                        <li>데이터 입력, 사진 등록, 버튼 동작 등 주요 기능의 UI 요소를 컴포넌트화하여 재사용성과 유지보수 효율성 강화</li>
+                                        <li>카트 모니터링 및 대기 카트 화면을 최대 46인치의 대형 디스플레이에서도 안정적으로 표시되도록 반응형 레이아웃 설계 및 퍼블리싱 수행</li>
+                                    </ul>
+                                </div>
+
+                                 <div class="work-item">
+                                    <h5>카카오브이엑스 공식 홈페이지 리뉴얼 개편</h5>
+                                    <p>2021.11.01~2022.03.09</p>
+                                    <ul class="task-list">
+                                        <li>SEO 및 UX 강화를 위한 공식 홈페이지 개편 프로젝트 참여
+                                        <li>구조화된 콘텐츠 설계 및 접근성 중심 UI, 인터렉션 적용을 통해 SEO 향상 및 채용 페이지 전환율 개선 유도</li>
+                                        <li>반응형 퍼블리싱과 인터랙션 효과 적용으로 다양한 디바이스 환경에서 UX 일관성 확보</li>
+                                        <li>Jira·Confluence 기반의 협업 프로세스를 통해 팀 간 이슈 관리 및 커뮤니케이션 효율화 주도</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">javascript</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Gulp</span>
+                            </div>
                         </div>
-                        <p class="job-title">웹 퍼블리셔</p>
-                        <ul class="job-responsibilities">
-                            <li>카카오 계열 서비스 웹 인터페이스 구현</li>
-                            <li>인터랙티브 웹 효과 및 애니메이션 개발</li>
-                            <li>다양한 해상도 대응 반응형 웹 제작</li>
-                            <li>웹 표준 및 시맨틱 마크업 적용</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">jQuery</span>
-                        </div>
-                    </article>
+                    </div>
                     
-                    <article class="job-item">
-                        <div class="job-header">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2020.07.13~2021.10.29</div>
                             <h3 class="company-name">스마트스코어</h3>
-                            <span class="job-period">2019.06 - 2020.12 (1년 7개월)</span>
+                            <p class="job-title">웹퍼블리셔 / UI 개발자</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>계열사 신규 홈페이지 구축</h5>
+                                    <p>2021.04.19~2025.06.25</p>
+                                    <ul class="task-list">
+                                        <li>골프용품 브랜드 ‘퍼블핀’과 보험사 ‘위드리치’의 웹사이트 신규구축</li>
+                                        <li>시맨틱 마크업을 통해 검색 최적화(SEO)와 웹 접근성 강화</li>
+                                        <li>인터렉션 요소 리디자인 및 크로스 브라우징 호환성 확보를 통해 사용자 경험 전반 개선</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>스마트스코어 공식 홈페이지 UI 유지보수</h5>
+                                    <p>2021.03.09~2021.04.22</p>
+                                    <ul class="task-list">
+                                        <li>Vue 기반 UI 사용성 개선</li>
+                                        <li>팝업 및 마켓 레이아웃 전반의 UI를 사용자 흐름에 맞게 개편하여 사용성 향상</li>
+                                        <li>Vue 컴포넌트 구조 내에서 직관적인 인터페이스 구현 및 UX 최적화</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>맥케이슨 쇼핑몰 신규 구축</h5>
+                                    <p>2020.12.03~2021.01.27</p>
+                                    <ul class="task-list">
+                                        <li>Vue 기반 골프웨어 쇼핑몰 UI 개선 및 컴포넌트화 작업</li>
+                                        <li>쇼핑몰 전반에 걸친 반응형 UI 구현 및 사용자 흐름에 최적화된 쇼핑 UI 컴포넌트 설계</li>
+                                        <li>Vue 환경에 맞춘 컴포넌트 구조화를 통해 유지보수성과 재사용성 강화</li>
+                                    </ul>
+                                </div>
+
+                                 <div class="work-item">
+                                    <h5>스마트스코어 개인앱</h5>
+                                    <p>2020.07.13~2021.10.29</p>
+                                    <ul class="task-list">
+                                        <li>Vue 기반 UI 컴포넌트화 작업 수행</li>
+                                        <li>중고마켓, 골프매거진, 하우스/마샬캐디, 선물하기, 조인 등 다양한 서비스 작업 페이지에 사용될 UI 요소를 공통 컴포넌트로 구조화</li>
+                                        <li>유지보수성과 재사용성을 고려한 컴포넌트 설계로 프로젝트 전체의 개발 효율성 및 UI 일관성 강화에 기여</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Vue</span>
+                                <span class="tech-tag">Zeplin</span>
+                                <span class="tech-tag">Git</span>
+                            </div>
                         </div>
-                        <p class="job-title">웹퍼블리셔 / UI 개발자</p>
-                        <ul class="job-responsibilities">
-                            <li>스포츠 데이터 플랫폼 웹사이트 퍼블리싱</li>
-                            <li>데이터 시각화 인터페이스 구현</li>
-                            <li>관리자 시스템 웹 인터페이스 개발</li>
-                            <li>Git을 활용한 협업 및 버전 관리</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Bootstrap</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
                         </div>
-                    </article>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2020.03.09~2020.06.08</div>
+                            <h3 class="company-name">메가스터디교육</h3>
+                            <p class="job-title">웹퍼블리셔</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>공무원 교육 플랫폼(메가공무원 외) 웹 퍼블리싱 및 운영 지원</h5>
+                                    <p>2020.03.09~2020.06.08</p>
+                                    <ul class="task-list">
+                                        <li>메가공무원, 메가소방, 난공소방학원 등 복수 교육 서비스의 ASP 기반 웹사이트에서 이벤트/기획전 페이지 제작 및 반응형 UI 적용</li>
+                                        <li>HTML/CSS 및 JS를 기반으로 한 퍼블리싱 업무와 크로스 브라우징 이슈 대응</li>
+                                        <li>서비스 운영 중 발생하는 콘텐츠 유지보수 및 UI 개선 작업 수행</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">jQuery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2018.10.01~2019.10.24</div>
+                            <h3 class="company-name">엔라이튼</h3>
+                            <p class="job-title">웹퍼블리셔</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>발전왕 UI 커스터마이징</h5>
+                                    <p>2019.07.30~2019.09.30</p>
+                                    <ul class="task-list">
+                                        <li>Ionic 환경에서의 UI 구조 개선 및 컴포넌트화</li>
+                                        <li>Angular 기반 Ionic 앱 내에서 월별 데이터 조회, 내비게이션 메뉴, 랭킹 리스트 UI를 사용자 경험 중심으로 개선</li>
+                                        <li>디자인 커스터마이징 및 컴포넌트화 작업을 통해 앱 전반의 UI 일관성과 개발 효율성 강화</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>솔라브리지 및 P2P 서비스 반응형 레이아웃 개선 및 운영</h5>
+                                    <p>2019.05.16~2019.08.02</p>
+                                    <ul class="task-list">
+                                        <li>솔라브리지 웹사이트의 반응형 레이아웃 전반을 개선하고 다양한 디바이스 환경에 맞춰 UI 일관성 유지 및 유지보수 수행</li>
+                                        <li>P2P 금융 서비스의 반응형 화면 최적화 작업과 함께 A/B 테스트 기반의 UI 개선 진행</li>
+                                        <li>사용자 반응 데이터를 바탕으로 페이지 구조와 인터페이스 요소를 반복 개선하여 사용자 경험 향상에 기여</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>솔라커넥트 · 비즈솔라커넥트 웹 퍼블리싱 및 유지보수</h5>
+                                    <p>2018.10.01~2019.10.24</p>
+                                    <ul class="task-list">
+                                        <li>Ruby 기반 태양광 발전 사업자 대상 서비스의 웹 퍼블리싱 담당</li>
+                                        <li>Bootstrap 기반 반응형 UI 구현 및 SEO 최적화 작업 수행</li>
+                                        <li>Git 저장소에서 코드 구조 파악 및 효율적인 유지보수 진행</li>
+                                        <li>Jira · Confluence 활용하여 개발팀·디자인팀 간 협업 및 이슈 관리 주도</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">ionic</span>
+                                <span class="tech-tag">Zeplin</span>
+                                <span class="tech-tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="job-period-badge">2018.03.19~2018.08.17</div>
+                            <h3 class="company-name">모은넷</h3>
+                            <p class="job-title">웹퍼블리셔</p>
+                            
+                            <div class="work-details">
+                                <h4>주요 업무</h4>
+                                <div class="work-item">
+                                    <h5>모은넷 홈페이지 리뉴얼</h5>
+                                    <p>2018.05.28~2018.07.18</p>
+                                    <ul class="task-list">
+                                        <li>워드프레스 기반 기업 홈페이지를 반응형 웹으로 개편</li>
+                                        <li>기획부터 디자인, 퍼블리싱까지 전담하여 리뉴얼 오픈 완료</li>
+                                        <li>다양한 디바이스에서도 안정적으로 작동하는 구조 설계</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>보길몰 해산물 쇼핑몰 제작</h5>
+                                    <p>2018.05.15~2018.08.30</p>
+                                    <ul class="task-list">
+                                        <li>카페24 기반 자사 쇼핑몰 기획 및 구축</li>
+                                        <li>제품 사진 촬영부터 디자인, 퍼블리싱까지 전 과정 작업</li>
+                                        <li>사용자 중심 UI 설계 및 전반적인 쇼핑 흐름 최적화</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="work-item">
+                                    <h5>CTI 화면 UI 개발</h5>
+                                    <p>2018.03.19~2018.04.11</p>
+                                    <ul class="task-list">
+                                        <li>HTML, CSS, JavaScript를 활용한 고객센터 CTI 화면 구현</li>
+                                        <li>상담 효율성을 고려한 실시간 인터페이스 구성</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">jQuery</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -208,724 +501,82 @@ export const fileSystemData: FileNode = {
                 <div class="education-list">
                     <div class="education-item">
                         <h3>프론트엔드 개발 부트캠프</h3>
-                        <p class="institution">코드캠프</p>
-                        <p class="period">2018.09 - 2019.03 (6개월)</p>
+                        <p class="institution">인프런</p>
+                        <p class="period">2023.10 - 2024.03 (6개월)</p>
                         <p class="description">
-                            React, Vue.js 등 모던 프론트엔드 프레임워크 학습<br>
-                            팀 프로젝트를 통한 실무 경험 습득
+                            React, Vue.js 등 모던 프론트엔드 프레임워크 학습
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>웹퍼블리싱 완전 정복 : 모션 디자인으로 완성</h3>
+                        <p class="institution">패스트캠퍼스강남학원</p>
+                        <p class="period">2023. 11 ~ 2024. 01 (3개월)</p>
+                        <p class="description">
+                            2D Canvas, 3D Three.js 대표 라이브러리를 활용한 심화 인터랙티브 웹 개발
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>ncs 디지털컨버전스웹&앱융합콘텐츠제작</h3>
+                        <p class="institution">더조은컴퓨터아트학원</p>
+                        <p class="period">2017. 02 ~ 2017. 07 (6개월)</p>
+                        <p class="description">
+                            html5 css3 jquery를 이용한 하드코딩, 포토샵 일러스트를 활용한 디자인
                         </p>
                     </div>
                 </div>
             </div>
-            
-            <div class="achievements-section">
-                <h2>주요 성과</h2>
-                <ul class="achievement-list">
-                    <li>
-                        <strong>웹 접근성 개선</strong>
-                        <span>KWCAG 2.1 기준 준수로 사용자 경험 향상 달성</span>
-                    </li>
-                    <li>
-                        <strong>성능 최적화</strong>
-                        <span>페이지 로딩 속도 30% 개선 및 Core Web Vitals 점수 향상</span>
-                    </li>
-                    <li>
-                        <strong>컴포넌트 라이브러리 구축</strong>
-                        <span>재사용 가능한 UI 컴포넌트 50+ 개 개발로 개발 효율성 증대</span>
-                    </li>
-                    <li>
-                        <strong>크로스 브라우저 호환성</strong>
-                        <span>IE11 포함 모든 주요 브라우저 지원으로 사용자 접근성 확대</span>
-                    </li>
-                </ul>
-            </div>
         </div>
     </section>
 </body>
-</html>`
-                }
-            ]
+</html>`,
+                },
+            ],
         },
         {
-            id: 'portfolio',
-            name: 'portfolio',
-            type: 'folder',
+            id: "portfolio",
+            name: "포트폴리오 작업물",
+            type: "folder",
             isExpanded: true,
-            path: '/portfolio',
+            path: "/portfolio",
             children: [
                 {
-                    id: 'project-corporate',
-                    name: 'safepay-project',
-                    type: 'folder',
+                    id: "project-corporate",
+                    name: "safepay-project",
+                    type: "folder",
                     isExpanded: false,
-                    path: '/portfolio/safepay-project',
-                    children: [
-                        {
-                            id: 'corporate-index',
-                            name: 'index.html',
-                            type: 'file',
-                            extension: 'html',
-                            path: '/portfolio/corporate-site/index.html',
-                            content: `<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기업 사이트 - 메인</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">
-                <a href="#home">Company Logo</a>
-            </h1>
-            <nav class="gnb">
-                <ul>
-                    <li><a href="#about">회사소개</a></li>
-                    <li><a href="#services">서비스</a></li>
-                    <li><a href="#portfolio">포트폴리오</a></li>
-                    <li><a href="#contact">연락처</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="모바일 메뉴 열기">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2 class="hero-title">혁신적인 솔루션으로<br>비즈니스의 미래를 만듭니다</h2>
-                <p class="hero-desc">고객의 성공이 우리의 성공입니다</p>
-                <a href="#contact" class="btn-primary">상담 문의</a>
-            </div>
-        </section>
-        
-        <section class="services" id="services">
-            <div class="container">
-                <h2 class="section-title">주요 서비스</h2>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <div class="service-icon">🚀</div>
-                        <h3>디지털 전환</h3>
-                        <p>기업의 디지털 혁신을 위한 컨설팅 서비스</p>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon">💡</div>
-                        <h3>솔루션 개발</h3>
-                        <p>맞춤형 소프트웨어 솔루션 개발</p>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon">📊</div>
-                        <h3>데이터 분석</h3>
-                        <p>빅데이터 분석 및 인사이트 제공</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Company Name. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    <script src="./scripts/main.js"></script>
-</body>
-</html>`
-                        },
-                        {
-                            id: 'corporate-css',
-                            name: 'main.css',
-                            type: 'file',
-                            extension: 'css',
-                            path: '/portfolio/corporate-site/styles/main.css',
-                            content: `/* =================================
-   기업 사이트 메인 스타일시트
-   ================================= */
-
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
-    z-index: 1000;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.logo a {
-    font-size: 24px;
-    font-weight: 700;
-    color: #2563eb;
-    text-decoration: none;
-}
-
-.gnb ul {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-}
-
-.gnb a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.gnb a:hover {
-    color: #2563eb;
-}
-
-.mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 4px;
-}
-
-.mobile-menu-btn span {
-    width: 24px;
-    height: 2px;
-    background: #333;
-    transition: all 0.3s ease;
-}
-
-/* Hero Section */
-.hero {
-    padding: 140px 0 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-}
-
-.hero-title {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-desc {
-    font-size: 20px;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-.btn-primary {
-    display: inline-block;
-    padding: 16px 32px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-}
-
-/* Services Section */
-.services {
-    padding: 80px 0;
-    background: #f8fafc;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: #1e293b;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.service-item {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.service-item h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #1e293b;
-}
-
-.service-item p {
-    color: #64748b;
-    line-height: 1.6;
-}
-
-/* Footer */
-.footer {
-    background: #1e293b;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.service-item {
-    animation: fadeInUp 0.6s ease forwards;
-}`
-                        },
-                        {
-                            id: 'corporate-responsive',
-                            name: 'responsive.css',
-                            type: 'file',
-                            extension: 'css',
-                            path: '/portfolio/corporate-site/styles/responsive.css',
-                            content: `/* =================================
-   반응형 웹 스타일시트
-   ================================= */
-
-/* Tablet (768px ~ 1023px) */
-@media screen and (max-width: 1023px) {
-    .container {
-        padding: 0 16px;
-    }
-    
-    .hero-title {
-        font-size: 40px;
-    }
-    
-    .hero-desc {
-        font-size: 18px;
-    }
-    
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-/* Mobile (320px ~ 767px) */
-@media screen and (max-width: 767px) {
-    /* Header Mobile */
-    .gnb {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: white;
-        border-top: 1px solid #eee;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-    
-    .gnb.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .gnb ul {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
-    /* Hero Mobile */
-    .hero {
-        padding: 120px 0 60px;
-    }
-    
-    .hero-title {
-        font-size: 32px;
-        line-height: 1.3;
-    }
-    
-    .hero-desc {
-        font-size: 16px;
-    }
-    
-    .btn-primary {
-        padding: 14px 24px;
-        font-size: 16px;
-    }
-    
-    /* Services Mobile */
-    .services {
-        padding: 60px 0;
-    }
-    
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 40px;
-    }
-    
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    
-    .service-item {
-        padding: 30px 20px;
-    }
-    
-    .service-item h3 {
-        font-size: 20px;
-    }
-}
-
-/* Small Mobile (320px ~ 479px) */
-@media screen and (max-width: 479px) {
-    .container {
-        padding: 0 12px;
-    }
-    
-    .hero-title {
-        font-size: 28px;
-    }
-    
-    .section-title {
-        font-size: 24px;
-    }
-    
-    .service-item {
-        padding: 24px 16px;
-    }
-}
-
-/* High DPI Displays */
-@media (-webkit-min-device-pixel-ratio: 2),
-       (min-resolution: 192dpi) {
-    /* 고해상도 디스플레이용 스타일 */
-    .logo a {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .header,
-    .mobile-menu-btn,
-    .btn-primary {
-        display: none;
-    }
-    
-    .hero {
-        background: none;
-        color: #333;
-    }
-    
-    * {
-        box-shadow: none !important;
-    }
-}`
-                        },
-                        {
-                            id: 'corporate-js',
-                            name: 'main.js',
-                            type: 'file',
-                            extension: 'js',
-                            path: '/portfolio/corporate-site/scripts/main.js',
-                            content: `/**
- * 기업 사이트 메인 스크립트
- * 모바일 메뉴, 스크롤 효과, 성능 최적화 포함
- */
-
-class CorporateSite {
-    constructor() {
-        this.init();
-    }
-    
-    init() {
-        this.setupMobileMenu();
-        this.setupSmoothScroll();
-        this.setupScrollEffects();
-        this.setupIntersectionObserver();
-        this.setupPerformanceOptimization();
-    }
-    
-    // 모바일 메뉴 토글
-    setupMobileMenu() {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const gnb = document.querySelector('.gnb');
-        
-        if (!mobileMenuBtn || !gnb) return;
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            gnb.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-            
-            // 메뉴 열림/닫힘 애니메이션
-            const spans = mobileMenuBtn.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                if (mobileMenuBtn.classList.contains('active')) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                } else {
-                    span.style.transform = 'none';
-                    span.style.opacity = '1';
-                }
-            });
-        });
-        
-        // 메뉴 링크 클릭 시 메뉴 닫기
-        const menuLinks = gnb.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                gnb.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-            });
-        });
-    }
-    
-    // 부드러운 스크롤
-    setupSmoothScroll() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 70;
-                    
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    }
-    
-    // 스크롤 효과 (헤더 배경 변화)
-    setupScrollEffects() {
-        const header = document.querySelector('.header');
-        let lastScrollY = window.scrollY;
-        
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            
-            // 헤더 배경 투명도 조절
-            if (currentScrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-            
-            lastScrollY = currentScrollY;
-        }, { passive: true });
-    }
-    
-    // Intersection Observer를 활용한 애니메이션
-    setupIntersectionObserver() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    
-                    // 서비스 아이템 순차 애니메이션
-                    if (entry.target.classList.contains('service-item')) {
-                        const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
-                        entry.target.style.animationDelay = \`\${index * 0.1}s\`;
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        // 애니메이션 대상 요소들
-        const animationTargets = document.querySelectorAll('.service-item, .section-title');
-        animationTargets.forEach(target => {
-            target.style.opacity = '0';
-            target.style.transform = 'translateY(30px)';
-            target.style.transition = 'all 0.6s ease';
-            observer.observe(target);
-        });
-    }
-    
-    // 성능 최적화
-    setupPerformanceOptimization() {
-        // 이미지 Lazy Loading
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.loading = 'lazy';
-            });
-        }
-        
-        // 디바운스된 리사이즈 핸들러
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                this.handleResize();
-            }, 250);
-        }, { passive: true });
-    }
-    
-    handleResize() {
-        // 리사이즈 시 필요한 작업들
-        const gnb = document.querySelector('.gnb');
-        if (window.innerWidth > 767 && gnb.classList.contains('active')) {
-            gnb.classList.remove('active');
-        }
-    }
-}
-
-// DOM 로드 완료 후 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    new CorporateSite();
-});
-
-// 성능 모니터링
-if ('performance' in window) {
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const perfData = performance.getEntriesByType('navigation')[0];
-            console.log('페이지 로드 시간:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-        }, 0);
-    });
-}`
-                        }
-                    ]
+                    path: "/portfolio/safepay-project",
                 },
                 {
-                    id: 'project-ecommerce',
-                    name: 'travel-together',
-                    type: 'folder',
+                    id: "project-ecommerce",
+                    name: "travel-together",
+                    type: "folder",
                     isExpanded: false,
-                    path: '/portfolio/travel-together',
-                    children: [
-                        {
-                            id: 'ecommerce-index',
-                            name: 'index.html',
-                            type: 'file',
-                            extension: 'html',
-                            path: '/portfolio/e-commerce/index.html',
-                            content: '// E-commerce 사이트 HTML...'
-                        },
-                        {
-                            id: 'ecommerce-css',
-                            name: 'styles.css',
-                            type: 'file',
-                            extension: 'css',
-                            path: '/portfolio/e-commerce/styles.css',
-                            content: '/* E-commerce 사이트 CSS... */'
-                        }
-                    ]
+                    path: "/portfolio/travel-together",
                 },
                 {
-                    id: 'project-hanmi',
-                    name: '한미약품 리뉴얼',
-                    type: 'folder',
+                    id: "project-hanmi",
+                    name: "한미약품 리뉴얼",
+                    type: "folder",
                     isExpanded: false,
-                    path: '/portfolio/character-branding',
-                    children: [
-                        {
-                            id: 'landing-index',
-                            name: 'index.html',
-                            type: 'file',
-                            extension: 'html',
-                            path: '/portfolio/landing-page/index.html',
-                            content: '// 랜딩페이지 HTML...'
-                        }
-                    ]
-                }
-            ]
+                    path: "/portfolio/character-branding",
+                },
+            ],
         },
         {
-            id: 'skills',
-            name: 'skills',
-            type: 'folder',
+            id: "skills",
+            name: "스킬",
+            type: "folder",
             isExpanded: false,
-            path: '/skills',
+            path: "/skills",
             children: [
                 {
-                    id: 'frontend-html',
-                    name: 'frontend.html',
-                    type: 'file',
-                    extension: 'html',
-                    path: '/skills/frontend.html',
+                    id: "frontend-html",
+                    name: "frontend.html",
+                    type: "file",
+                    extension: "html",
+                    path: "/skills/frontend.html",
                     content: `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -934,42 +585,42 @@ if ('performance' in window) {
 </head>
 <body>
     <section class="skills">
-        <h1>Frontend Skills</h1>
-        <p class="skills-intro">5년 7개월의 실무 경험을 바탕으로 한 전문 기술 스택</p>
+        <h1>Skills</h1>
+        <p class="skills-intro">5년 7개월의 실무 경험을 바탕으로 한 기술 스택</p>
         
         <div class="skill-category">
             <h2>Core Technologies</h2>
             <div class="skill-items">
-                <div class="skill-item">
-                    <h3>HTML5</h3>
-                    <div class="skill-level" data-level="95">
+                <div class="skill-item" data-level="100">
+                    <h3>HTML5 <span class="proficiency">100%</span></h3>
+                    <div class="skill-level" data-level="100">
                         <div class="skill-bar"></div>
                     </div>
                     <p>시맨틱 마크업, 웹 접근성, SEO 최적화, 웹 표준 준수</p>
                     <span class="experience">5년+ 실무 경험</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>CSS3</h3>
-                    <div class="skill-level" data-level="95">
+                <div class="skill-item" data-level="100">
+                    <h3>CSS3 <span class="proficiency">100%</span></h3>
+                    <div class="skill-level" data-level="100">
                         <div class="skill-bar"></div>
                     </div>
                     <p>Flexbox, Grid, Animation, Responsive Design, Cross-browser 호환성</p>
                     <span class="experience">5년+ 실무 경험</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>SCSS/Sass</h3>
-                    <div class="skill-level" data-level="90">
+                <div class="skill-item" data-level="100">
+                    <h3>SCSS/Sass <span class="proficiency">100%</span></h3>
+                    <div class="skill-level" data-level="100">
                         <div class="skill-bar"></div>
                     </div>
                     <p>Variables, Mixins, Nesting, BEM 방법론, 컴포넌트 스타일링</p>
-                    <span class="experience">4년+ 실무 경험</span>
+                    <span class="experience">5년+ 실무 경험</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>JavaScript (ES6+)</h3>
-                    <div class="skill-level" data-level="85">
+                <div class="skill-item" data-level="80">
+                    <h3>JavaScript (ES6+) <span class="proficiency">80%</span></h3>
+                    <div class="skill-level" data-level="80">
                         <div class="skill-bar"></div>
                     </div>
                     <p>DOM 조작, 이벤트 처리, 비동기 프로그래밍, 모던 JS 문법</p>
@@ -981,40 +632,40 @@ if ('performance' in window) {
         <div class="skill-category">
             <h2>Frontend Frameworks & Libraries</h2>
             <div class="skill-items">
-                <div class="skill-item">
-                    <h3>Vue.js</h3>
-                    <div class="skill-level" data-level="85">
+                <div class="skill-item" data-level="70">
+                    <h3>Vue.js <span class="proficiency">70%</span></h3>
+                    <div class="skill-level" data-level="70">
                         <div class="skill-bar"></div>
                     </div>
                     <p>Component 개발, Vuex, Vue Router, Composition API</p>
-                    <span class="experience">이투스에듀에서 실무 활용</span>
+                    <span class="experience">스마트스코어, 이투스에듀에서 실무 활용</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>Nuxt.js</h3>
-                    <div class="skill-level" data-level="80">
+                <div class="skill-item" data-level="70">
+                    <h3>Nuxt.js <span class="proficiency">70%</span></h3>
+                    <div class="skill-level" data-level="70">
                         <div class="skill-bar"></div>
                     </div>
                     <p>SSR, 정적 사이트 생성, 모듈 시스템</p>
-                    <span class="experience">이투스에듀에서 실무 활용</span>
+                    <span class="experience">개인 토이 프로젝트, 이투스에듀에서 실무 활용</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>React</h3>
-                    <div class="skill-level" data-level="80">
+                <div class="skill-item" data-level="60">
+                    <h3>React <span class="proficiency">60%</span></h3>
+                    <div class="skill-level" data-level="60">
                         <div class="skill-bar"></div>
                     </div>
                     <p>Component 개발, Hooks, State 관리, JSX</p>
                     <span class="experience">빗썸에서 실무 활용</span>
                 </div>
                 
-                <div class="skill-item">
-                    <h3>Next.js</h3>
-                    <div class="skill-level" data-level="75">
+                <div class="skill-item" data-level="60">
+                    <h3>Next.js <span class="proficiency">60%</span></h3>
+                    <div class="skill-level" data-level="60">
                         <div class="skill-bar"></div>
                     </div>
                     <p>SSR, 성능 최적화, 라우팅, TypeScript 연동</p>
-                    <span class="experience">빗썸에서 실무 활용</span>
+                    <span class="experience">개인 토이 프로젝트에서 활용</span>
                 </div>
             </div>
         </div>
@@ -1022,251 +673,56 @@ if ('performance' in window) {
         <div class="skill-category">
             <h2>Development Tools & Workflow</h2>
             <div class="skill-items">
-                <div class="skill-item">
-                    <h3>Git</h3>
+                <div class="skill-item" data-level="90">
+                    <h3>Git <span class="proficiency">90%</span></h3>
                     <div class="skill-level" data-level="90">
                         <div class="skill-bar"></div>
                     </div>
                     <p>버전 관리, 협업 워크플로우, Branch 전략</p>
                     <span class="experience">모든 회사에서 활용</span>
                 </div>
+
+                <div class="skill-item" data-level="80">
+                    <h3>Jira <span class="proficiency">80%</span></h3>
+                    <div class="skill-level" data-level="80">
+                        <div class="skill-bar"></div>
+                    </div>
+                    <p>프로젝트 관리, 이슈 트래킹, 애자일 방법론</p>
+                    <span class="experience">엔라이튼, 스마트스코어, 카카오VX, 이투스에듀, 빗썸에서 활용</span>
+                </div>
                 
                 <div class="skill-item">
                     <h3>Figma</h3>
-                    <div class="skill-level" data-level="85">
-                        <div class="skill-bar"></div>
-                    </div>
                     <p>디자인 시안 분석, 컴포넌트 추출, 디자인 시스템</p>
-                    <span class="experience">이투스에듀, 빗썸에서 활용</span>
+                    <span class="experience">카카오VX, 이투스에듀, 빗썸에서 활용</span>
                 </div>
                 
                 <div class="skill-item">
                     <h3>Zeplin</h3>
-                    <div class="skill-level" data-level="80">
-                        <div class="skill-bar"></div>
-                    </div>
                     <p>디자인 가이드 추출, 스펙 확인, 에셋 다운로드</p>
-                    <span class="experience">디자인 협업 도구</span>
-                </div>
-                
-                <div class="skill-item">
-                    <h3>Jira</h3>
-                    <div class="skill-level" data-level="75">
-                        <div class="skill-bar"></div>
-                    </div>
-                    <p>프로젝트 관리, 이슈 트래킹, 애자일 방법론</p>
-                    <span class="experience">팀 협업 및 일정 관리</span>
+                    <span class="experience">엔라이튼에서 활용</span>
                 </div>
             </div>
         </div>
-        
-        <div class="skill-category">
-            <h2>Core Competencies</h2>
-            <ul class="competency-highlights">
-                <li>🎯 <strong>크로스 브라우저 호환성</strong> - IE11 포함 모든 주요 브라우저 지원</li>
-                <li>📱 <strong>반응형 웹 구현</strong> - 모바일 퍼스트 접근법</li>
-                <li>♿ <strong>웹 접근성</strong> - KWCAG 2.1 기준 준수</li>
-                <li>⚡ <strong>성능 최적화</strong> - Core Web Vitals 개선</li>
-                <li>🔧 <strong>컴포넌트 기반 개발</strong> - 재사용 가능한 UI 컴포넌트</li>
-            </ul>
-        </div>
     </section>
 </body>
-</html>`
+</html>`,
                 },
-                {
-                    id: 'tools-html',
-                    name: 'tools.html',
-                    type: 'file',
-                    extension: 'html',
-                    path: '/skills/tools.html',
-                    content: `<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>사용 도구 및 협업 툴</title>
-</head>
-<body>
-    <section class="tools">
-        <h1>Development Tools & Collaboration</h1>
-        <p class="tools-intro">실무에서 활용하는 개발 도구 및 협업 환경</p>
-        
-        <div class="tool-category">
-            <h2>Design & Collaboration Tools</h2>
-            <ul class="tool-list">
-                <li>
-                    <div class="tool-icon">🎨</div>
-                    <div class="tool-info">
-                        <h3>Figma</h3>
-                        <p>UI/UX 디자인 분석, 컴포넌트 추출, 디자인 시스템 활용</p>
-                        <span class="usage">이투스에듀, 빗썸에서 실무 활용</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">📐</div>
-                    <div class="tool-info">
-                        <h3>Zeplin</h3>
-                        <p>디자인 가이드 추출, 스펙 확인, 에셋 다운로드</p>
-                        <span class="usage">디자이너-개발자 간 협업 도구</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">📋</div>
-                    <div class="tool-info">
-                        <h3>Jira</h3>
-                        <p>프로젝트 관리, 이슈 트래킹, 애자일 스프린트 관리</p>
-                        <span class="usage">팀 협업 및 일정 관리 도구</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="tool-category">
-            <h2>Development Environment</h2>
-            <ul class="tool-list">
-                <li>
-                    <div class="tool-icon">💻</div>
-                    <div class="tool-info">
-                        <h3>Visual Studio Code</h3>
-                        <p>주요 개발 환경, 확장 프로그램 활용, 통합 터미널</p>
-                        <span class="usage">모든 프로젝트의 메인 에디터</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">🐙</div>
-                    <div class="tool-info">
-                        <h3>Git / GitHub</h3>
-                        <p>버전 관리, 브랜치 전략, 코드 리뷰, 협업 워크플로우</p>
-                        <span class="usage">모든 회사에서 필수 도구</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">🌐</div>
-                    <div class="tool-info">
-                        <h3>Chrome DevTools</h3>
-                        <p>디버깅, 성능 최적화, 반응형 테스트, 네트워크 분석</p>
-                        <span class="usage">일상적인 개발 및 디버깅</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">🔧</div>
-                    <div class="tool-info">
-                        <h3>npm / yarn</h3>
-                        <p>패키지 관리, 의존성 관리, 스크립트 실행</p>
-                        <span class="usage">Node.js 프로젝트 관리</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="tool-category">
-            <h2>Testing & Performance</h2>
-            <ul class="tool-list">
-                <li>
-                    <div class="tool-icon">📊</div>
-                    <div class="tool-info">
-                        <h3>Lighthouse</h3>
-                        <p>웹 성능 측정, 접근성 검사, SEO 분석</p>
-                        <span class="usage">성능 최적화 및 품질 보증</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">🔍</div>
-                    <div class="tool-info">
-                        <h3>BrowserStack</h3>
-                        <p>크로스 브라우저 테스트, 다양한 디바이스 테스트</p>
-                        <span class="usage">브라우저 호환성 테스트</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">♿</div>
-                    <div class="tool-info">
-                        <h3>axe DevTools</h3>
-                        <p>웹 접근성 검사, WCAG 가이드라인 준수 확인</p>
-                        <span class="usage">접근성 품질 관리</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">⚡</div>
-                    <div class="tool-info">
-                        <h3>PageSpeed Insights</h3>
-                        <p>Core Web Vitals 측정, 성능 개선 제안</p>
-                        <span class="usage">사용자 경험 최적화</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="tool-category">
-            <h2>Build Tools & Frameworks</h2>
-            <ul class="tool-list">
-                <li>
-                    <div class="tool-icon">📦</div>
-                    <div class="tool-info">
-                        <h3>Webpack</h3>
-                        <p>모듈 번들링, 최적화, 개발 서버 구성</p>
-                        <span class="usage">프로젝트 빌드 환경</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">⚡</div>
-                    <div class="tool-info">
-                        <h3>Vite</h3>
-                        <p>빠른 개발 서버, HMR, 최적화된 빌드</p>
-                        <span class="usage">모던 프론트엔드 빌드 도구</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="tool-icon">🎯</div>
-                    <div class="tool-info">
-                        <h3>ESLint / Prettier</h3>
-                        <p>코드 품질 관리, 일관된 코드 스타일</p>
-                        <span class="usage">코드 품질 및 팀 컨벤션</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="expertise-summary">
-            <h2>Tool Expertise Summary</h2>
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <h4>🎨 Design-Dev 협업</h4>
-                    <p>Figma, Zeplin을 통한 디자이너와의 원활한 소통</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>📋 프로젝트 관리</h4>
-                    <p>Jira를 활용한 애자일 개발 프로세스</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>🔧 개발 효율성</h4>
-                    <p>Git, VSCode, 빌드 도구를 통한 생산성 향상</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>📊 품질 관리</h4>
-                    <p>성능, 접근성, 브라우저 호환성 테스트</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>`
-                }
-            ]
+            ],
         },
         {
-            id: 'contact',
-            name: 'contact',
-            type: 'folder',
+            id: "contact",
+            name: "연락처",
+            type: "folder",
             isExpanded: false,
-            path: '/contact',
+            path: "/contact",
             children: [
                 {
-                    id: 'contact-info',
-                    name: 'info.html',
-                    type: 'file',
-                    extension: 'html',
-                    path: '/contact/info.html',
+                    id: "contact-info",
+                    name: "info.html",
+                    type: "file",
+                    extension: "html",
+                    path: "/contact/info.html",
                     content: `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1279,141 +735,102 @@ if ('performance' in window) {
         
         <div class="contact-grid">
             <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <p>soomin.frontend@gmail.com</p>
-                <a href="mailto:soomin.frontend@gmail.com">메일 보내기</a>
+                <h3>링크드인</h3>
+                <a href="https://www.linkedin.com/in/%EC%88%98%EB%AF%BC-%EC%9D%B4-019a61305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">링크드인 방문하기</a>
             </div>
             
             <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <h3>Phone</h3>
-                <p>010-1234-5678</p>
-                <a href="tel:010-1234-5678">전화 걸기</a>
+                <h3>블로그</h3>
+                <a href="https://suri-blog.vercel.app/" target="_blank">개발 블로그 방문하기</a>
             </div>
             
             <div class="contact-item">
-                <div class="contact-icon">🐙</div>
                 <h3>GitHub</h3>
-                <p>github.com/soompy</p>
-                <a href="https://github.com/soompy" target="_blank">GitHub 보기</a>
+                <a href="https://github.com/soompy" target="_blank">GitHub 저장소 방문하기</a>
             </div>
-            
-            <div class="contact-item">
-                <div class="contact-icon">🌐</div>
-                <h3>Portfolio</h3>
-                <p>이수민 포트폴리오</p>
-                <a href="https://soompy.github.io/my-introduction-page/" target="_blank">포트폴리오 보기</a>
-            </div>
-        </div>
-        
-        <div class="contact-form">
-            <h2>프로젝트 문의</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">제목</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">메시지</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn-submit">메시지 보내기</button>
-            </form>
         </div>
     </section>
 </body>
-</html>`
+</html>`,
                 },
-                {
-                    id: 'resume-pdf',
-                    name: 'resume.pdf',
-                    type: 'file',
-                    extension: 'pdf',
-                    path: '/contact/resume.pdf',
-                    content: '// PDF 파일 (이력서)'
-                }
-            ]
-        }
-    ]
+            ],
+        },
+    ],
 };
 
 export const projectsInfo: ProjectInfo[] = [
     {
-        id: 'corporate',
-        title: 'SafePay - 안전한 결제 서비스',
-        description: '블록체인 기반 안전한 결제 시스템을 제공하는 웹 애플리케이션. 사용자 친화적인 인터페이스와 보안성을 중시한 프로젝트',
-        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Hook Form'],
-        period: '2024.06 - 현재',
-        role: '프론트엔드 개발 & UI/UX 디자인',
-        url: 'https://soompy.github.io/my-introduction-page/',
-        github: 'https://github.com/soompy/my-introduction-page',
+        id: "corporate",
+        title: "SafePay - 안전한 결제 서비스",
+        description:
+            "블록체인 기반 안전한 결제 시스템을 제공하는 웹 애플리케이션. 사용자 친화적인 인터페이스와 보안성을 중시한 프로젝트",
+        techStack: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Framer Motion",
+            "React Hook Form",
+        ],
+        period: "2024.06 - 현재",
+        role: "프론트엔드 개발 & UI/UX 디자인",
+        url: "https://soompy.github.io/my-introduction-page/",
+        github: "https://github.com/soompy/my-introduction-page",
         features: [
-            '다크/라이트 테마 지원',
-            '반응형 웹 디자인',
-            '애니메이션 효과 구현',
-            'TypeScript를 활용한 타입 안전성',
-            '접근성을 고려한 UI 설계'
+            "다크/라이트 테마 지원",
+            "반응형 웹 디자인",
+            "애니메이션 효과 구현",
+            "TypeScript를 활용한 타입 안전성",
+            "접근성을 고려한 UI 설계",
         ],
         achievements: [
-            '모던한 디자인 시스템 구축',
-            '사용자 경험 최적화',
-            '성능 최적화 및 SEO 개선'
-        ]
+            "모던한 디자인 시스템 구축",
+            "사용자 경험 최적화",
+            "성능 최적화 및 SEO 개선",
+        ],
     },
     {
-        id: 'ecommerce',
-        title: '함께GO - 여행 동행 플랫폼',
-        description: '여행을 함께할 동행을 찾고 계획을 세울 수 있는 소셜 플랫폼. Vue.js 기반으로 개발된 프로젝트',
-        techStack: ['Vue.js', 'Nuxt.js', 'SCSS', 'JavaScript', 'Express.js'],
-        period: '2023.03 - 2023.06',
-        role: '풀스택 개발',
-        github: 'https://github.com/soompy/travel-companion',
+        id: "ecommerce",
+        title: "함께GO - 여행 동행 플랫폼",
+        description:
+            "여행을 함께할 동행을 찾고 계획을 세울 수 있는 소셜 플랫폼. Vue.js 기반으로 개발된 프로젝트",
+        techStack: ["Vue.js", "Nuxt.js", "SCSS", "JavaScript", "Express.js"],
+        period: "2023.03 - 2023.06",
+        role: "풀스택 개발",
+        github: "https://github.com/soompy/travel-companion",
         features: [
-            '실시간 채팅 시스템',
-            '지도 API 연동',
-            '사용자 매칭 알고리즘',
-            '여행 일정 관리 기능',
-            'SNS 로그인 연동'
+            "실시간 채팅 시스템",
+            "지도 API 연동",
+            "사용자 매칭 알고리즘",
+            "여행 일정 관리 기능",
+            "SNS 로그인 연동",
         ],
         achievements: [
-            '실시간 소통 기능 구현',
-            'API 연동 및 데이터 관리',
-            '사용자 중심 UI/UX 설계'
-        ]
+            "실시간 소통 기능 구현",
+            "API 연동 및 데이터 관리",
+            "사용자 중심 UI/UX 설계",
+        ],
     },
     {
-        id: 'landing',
-        title: '뇸뇸 프로젝트 - 캐릭터 브랜딩',
-        description: '오리지널 캐릭터 뇸뇸을 활용한 브랜딩 웹사이트. 인터랙티브한 애니메이션과 스토리텔링이 특징',
-        techStack: ['React', 'SCSS', 'Framer Motion', 'Canvas API', 'Lottie'],
-        period: '2022.09 - 2022.12',
-        role: '프론트엔드 개발 & 캐릭터 디자인',
-        url: 'https://soompy.github.io/character-branding/',
-        github: 'https://github.com/soompy/character-branding',
+        id: "landing",
+        title: "뇸뇸 프로젝트 - 캐릭터 브랜딩",
+        description:
+            "오리지널 캐릭터 뇸뇸을 활용한 브랜딩 웹사이트. 인터랙티브한 애니메이션과 스토리텔링이 특징",
+        techStack: ["React", "SCSS", "Framer Motion", "Canvas API", "Lottie"],
+        period: "2022.09 - 2022.12",
+        role: "프론트엔드 개발 & 캐릭터 디자인",
+        url: "https://soompy.github.io/character-branding/",
+        github: "https://github.com/soompy/character-branding",
         features: [
-            '캐릭터 인터랙션 애니메이션',
-            '스크롤 기반 스토리텔링',
-            '모바일 터치 인터랙션',
-            '캐릭터 굿즈 쇼케이스',
-            '브랜드 아이덴티티 시스템'
+            "캐릭터 인터랙션 애니메이션",
+            "스크롤 기반 스토리텔링",
+            "모바일 터치 인터랙션",
+            "캐릭터 굿즈 쇼케이스",
+            "브랜드 아이덴티티 시스템",
         ],
         achievements: [
-            '창의적인 캐릭터 브랜딩',
-            '몰입도 높은 사용자 경험',
-            '독창적인 인터랙션 디자인'
-        ]
-    }
+            "창의적인 캐릭터 브랜딩",
+            "몰입도 높은 사용자 경험",
+            "독창적인 인터랙션 디자인",
+        ],
+    },
 ];
