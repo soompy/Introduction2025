@@ -43,10 +43,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
         }
     };
 
-    const formatCode = (code: string, language: string) => {
-        // 간단한 구문 하이라이팅 (실제로는 더 복잡한 라이브러리 사용)
-        return code;
-    };
+    // 코드 포맷팅 함수는 추후 구현 예정
 
     const getFileIcon = (path: string) => {
         const extension = path.split(".").pop();
@@ -77,29 +74,44 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
     return (
         <div className="code-editor">
             <div className="editor-tabs">
-                {tabs.map((tab) => (
-                    <div
-                        key={tab.id}
-                        className={`editor-tab ${tab.isActive ? "active" : ""}`}
-                        onClick={() => onTabSelect(tab.id)}
-                    >
-                        <span className="tab-icon">
-                            {getFileIcon(tab.path)}
-                        </span>
-                        <span className="tab-name">{tab.name}</span>
-                        {tab.isDirty && <span className="tab-dirty">●</span>}
-                        <button
-                            className="tab-close"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onTabClose(tab.id);
-                            }}
-                            aria-label={`${tab.name} 탭 닫기`}
+                {tabs.map((tab) => {
+                    const isHtmlFile = tab.name.toLowerCase().endsWith(".html");
+                    return (
+                        <div
+                            key={tab.id}
+                            className={`editor-tab ${
+                                tab.isActive ? "active" : ""
+                            } ${isHtmlFile ? "html-file" : ""}`}
+                            onClick={() => onTabSelect(tab.id)}
                         >
-                            ×
-                        </button>
-                    </div>
-                ))}
+                            <span className="tab-icon">
+                                {getFileIcon(tab.path)}
+                            </span>
+                            <span className="tab-name">{tab.name}</span>
+                            {tab.isDirty && (
+                                <span className="tab-dirty">●</span>
+                            )}
+                            {isHtmlFile && !tab.isActive && (
+                                <div className="preview-hint">
+                                    <span className="hint-icon">🔴</span>
+                                    <span className="hint-text">
+                                        클릭하여 라이브 미리보기
+                                    </span>
+                                </div>
+                            )}
+                            <button
+                                className="tab-close"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    onTabClose(tab.id);
+                                }}
+                                aria-label={`${tab.name} 탭 닫기`}
+                            >
+                                ×
+                            </button>
+                        </div>
+                    );
+                })}
                 {currentTab && (
                     <div className="editor-controls">
                         <button
@@ -107,9 +119,23 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
                                 showPreview ? "active" : ""
                             }`}
                             onClick={() => setShowPreview(!showPreview)}
-                            title="라이브 미리보기 토글"
+                            title={
+                                showPreview ? "코드만 보기" : "라이브 미리보기"
+                            }
                         >
-                            {showPreview ? "📝" : "👁️"}
+                            <span className="preview-icon">
+                                {showPreview ? (
+                                    <>
+                                        <span className="icon">📝</span>
+                                        <span className="label">코드</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span className="icon">🔴</span>
+                                        <span className="label">미리보기</span>
+                                    </>
+                                )}
+                            </span>
                         </button>
                     </div>
                 )}
@@ -175,8 +201,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
                 ) : (
                     <div className="welcome-screen">
                         <div className="welcome-content">
-                            <h2>🎯 웹 퍼블리셔 포트폴리오</h2>
-                            <p>파일을 선택하여 코드를 확인해보세요!</p>
+                            <h2>Space 이수민</h2>
+                            <p>폴더를 선택하여 확인해보세요!</p>
                             <div className="welcome-shortcuts">
                                 <div className="shortcut">
                                     <kbd>Ctrl</kbd> + <kbd>P</kbd> - 파일 빠른
