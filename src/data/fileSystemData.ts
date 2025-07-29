@@ -576,6 +576,13 @@ export const fileSystemData: FileNode = {
                     isExpanded: false,
                     path: "/portfolio/magazine",
                 },
+                {
+                    id: "project-canvasConfetti",
+                    name: "캔버스 효과",
+                    type: "folder",
+                    isExpanded: false,
+                    path: "/portfolio/canvasConfetti",
+                },
             ],
         },
         {
@@ -810,7 +817,7 @@ export const projectsInfo: ProjectInfo[] = [
         techStack: ["React", "SCSS", "Framer Motion", "Canvas API", "Lottie"],
         period: "2022.09 - 2023.12",
         role: "프론트엔드 개발 & 캐릭터 디자인",
-        url: "https://toy-3-nuxt-nyomnyom-gb9cb72tf-suris-projects.vercel.app/",
+        url: "https://toy-3-nuxt-nyomnyom.vercel.app/",
         github: "https://github.com/soompy/toy_3_nuxt_nyomnyom",
         features: [
             "CRUD 구현",
@@ -831,7 +838,7 @@ export const projectsInfo: ProjectInfo[] = [
         techStack: ["Nuxt", "Vite", "SCSS", "JavaScript"],
         period: "2022.09 - 2023.12",
         role: "프론트, 퍼블리싱",
-        url: "https://toy-3-nuxt-nyomnyom-gb9cb72tf-suris-projects.vercel.app/",
+        url: "https://toy-3-nuxt-nyomnyom.vercel.app/",
         github: "https://github.com/soompy/toy_3_nuxt_nyomnyom",
         features: [
             "CRUD 구현",
@@ -877,5 +884,16 @@ export const projectsInfo: ProjectInfo[] = [
         role: "퍼블리싱",
         url: "https://pf-2024-magazine.vercel.app/",
         github: "https://github.com/soompy/PF2024_magazine",
+    },
+    {
+        id: "canvasConfetti",
+        title: "캔버스 효과 페이지",
+        description:
+            "카운트 다운 효과가 끝나면 3초 후 폭죽 터지는 효과가 나타나는 캔버스로 구현한 개인 작업물입니다.",
+        techStack: ["Vite", "SCSS", "JavaScript", "Html"],
+        period: "2024.01",
+        role: "퍼블리싱",
+        url: "https://pf-2023-canvas.vercel.app/",
+        github: "https://github.com/soompy/PF2023_canvas",
     },
 ];

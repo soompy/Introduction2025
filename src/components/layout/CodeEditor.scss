@@ -48,7 +48,7 @@
     width: 32px;
     height: 28px;
     background: transparent;
-    border: 1px solid var(--border-secondary);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -56,13 +56,10 @@
 
     &:hover {
         background: var(--bg-hover);
-        border-color: var(--border-primary);
     }
 
     &.active {
         background: var(--accent-primary);
-        border-color: var(--accent-primary);
-        color: white;
     }
 }
 

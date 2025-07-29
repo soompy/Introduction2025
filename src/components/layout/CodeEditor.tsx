@@ -127,12 +127,10 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
                                 {showPreview ? (
                                     <>
                                         <span className="icon">📝</span>
-                                        <span className="label">코드</span>
                                     </>
                                 ) : (
                                     <>
                                         <span className="icon">🔴</span>
-                                        <span className="label">미리보기</span>
                                     </>
                                 )}
                             </span>

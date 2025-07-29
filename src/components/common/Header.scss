@@ -21,24 +21,19 @@
 // Theme Toggle Button
 .theme-toggle {
     background: none;
-    border: 2px solid var(--border-accent);
+    border: none;
     padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-xl);
     cursor: pointer;
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text-accent);
     transition: all 0.3s ease;
+    font-weight: bold;
 
     &:hover {
         transform: scale(1.05);
         background-color: var(--text-accent);
         color: var(--bg-primary);
-    }
-
-    &:focus {
-        outline: 2px solid var(--interactive-focus);
-        outline-offset: 2px;
     }
 
     &:active {
